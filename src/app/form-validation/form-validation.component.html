@@ -1,0 +1,13 @@
+<form #loginForm="ngForm" (ngSubmit)="userForm(loginForm.value)">
+    <input type="text" required pattern="[a-z A-Z]+$" placeholder="Enter the name" #name="ngModel" name="name" ngModel>
+
+    <br><span *ngIf="name.invalid && name.touched">Please Enter valid name</span><br>
+    <br>
+
+    <input type="password" required  placeholder="Enter the password" #password="ngModel" name="password" ngModel>
+    <br><br><span *ngIf="password.invalid && password.touched">Please Enter valid Password</span><br>
+    <br>
+
+    <button [disabled]="loginForm.invalid">Submit</button>
+</form>
+
